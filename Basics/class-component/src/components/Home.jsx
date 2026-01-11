@@ -11,6 +11,7 @@ class Home extends React.Component{
                 <h2>Hello World</h2>
                 <h1>{this.showMessage()}</h1>
                 <h3>{this.title}</h3>
+                <h1>{this.props.name} {this.props.age}</h1>
             </>
         );
     }
