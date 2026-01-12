@@ -24,7 +24,7 @@ function Profile(){
 
             <br /><br />
 
-            <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+            <button style = {pageStyle} onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
               Toggle Theme
             </button>
         </div>
