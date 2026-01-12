@@ -3,7 +3,8 @@ import React, {useState} from "react";
 function FormValidation(){
     const [formData, setFormData] = useState({
         name:"",
-        email:""
+        email:"",
+        password:""
     });
     const [errors, setErrors] = useState({});
 
@@ -23,6 +24,7 @@ function FormValidation(){
         if(formData.email.trim()==="")newErrors.email = "Email is required";
         else if(!formData.email.includes("@"))newErrors.email = "Invalid";
 
+        if(formData.password.length<8)newErrors.password = "Password Length should be atleast 8";
         if(Object.keys(newErrors).length>0){
             setErrors(newErrors);
             return;
@@ -40,6 +42,8 @@ function FormValidation(){
             <input type="email" name="email" value={formData.email} placeholder="Enter Email: " onChange = {handleChange}/>
             {errors.email &&<p style={{color:"red"}}>{errors.email}</p>}
 
+            <input type="password" name = "password" value = {formData.password} placeholder="Enter Password" onChange={handleChange}/>
+            {errors.password &&<p style = {{color:"red"}}>{errors.password}</p>}
             <button type="Submit">Submit</button>
         </form>
         </>
